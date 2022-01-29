@@ -1,0 +1,23 @@
+<div id="hamburger" class="hamburger">
+  <span class="hamburger_line"></span>
+</div>
+<header>
+  <div class="header_flex">
+    <h1>
+      <a href="{{ url_for('views.index') }}"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="スキップカフェロゴ"></a>
+    </h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="{{ url_for('views.news') }}">News</a></li>
+        <li><a href="{{ url_for('views.access') }}">Access</a></li>
+        <li><a href="{{ url_for('views.contact') }}">Contact</a></li>
+        <li><a href="http://skip.ocnk.net/">Online&nbsp;Shop</a></li>
+      </ul>
+    </nav>
+    <div class="instagram">
+      <a href="https://www.instagram.com/skipcafe/" target="_blank">
+        <img src="{{ url_for('static', filename='images/instagram.jpg') }}" alt="インスタグラム">
+      </a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,93 @@
+{% extends 'application.html' %}
+
+{% block body %}
+  {% include 'header.html' %}
+    {% include 'firstview.html' %}
+  <!-- ニュース一覧 -->
+  <section>
+    <div class="news_flex">
+      <div class="news_contents">
+        <a href="{{ url_for('views.news_datail') }}">
+          <div class="news_img">
+            <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+          </div>
+          <div class="news_info">
+            <time>2020.01.01</time>
+            <h4>お知らせタイトル</h4>
+            <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+          </div>
+        </a>
+      </div>
+      <!-- 複製 -->
+      <div class="news_contents">
+        <a href="{{ url_for('views.news_datail') }}">
+          <div class="news_img">
+            <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+          </div>
+          <div class="news_info">
+            <time>2020.01.01</time>
+            <h4>お知らせタイトル</h4>
+            <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+          </div>
+        </a>
+      </div>
+      <div class="news_contents">
+        <a href="{{ url_for('views.news_datail') }}">
+          <div class="news_img">
+            <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+          </div>
+          <div class="news_info">
+            <time>2020.01.01</time>
+            <h4>お知らせタイトル</h4>
+            <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+          </div>
+        </a>
+      </div>
+      <div class="news_contents">
+        <a href="{{ url_for('views.news_datail') }}">
+          <div class="news_img">
+            <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+          </div>
+          <div class="news_info">
+            <time>2020.01.01</time>
+            <h4>お知らせタイトル</h4>
+            <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+          </div>
+        </a>
+      </div>
+      <div class="news_contents">
+        <a href="{{ url_for('views.news_datail') }}">
+          <div class="news_img">
+            <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+          </div>
+          <div class="news_info">
+            <time>2020.01.01</time>
+            <h4>お知らせタイトル</h4>
+            <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+          </div>
+        </a>
+      </div>
+      <div class="news_contents">
+        <a href="{{ url_for('views.news_datail') }}">
+          <div class="news_img">
+            <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+          </div>
+          <div class="news_info">
+            <time>2020.01.01</time>
+            <h4>お知らせタイトル</h4>
+            <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+          </div>
+        </a>
+      </div>
+      <!-- 複製 -->
+    </div>
+    <ul id="pagination">
+      <li class="pagination"><a href="">前へ</a></li>
+      <li class="pagination"><a href="">1</a></li>
+      <li class="pagination"><a href="">2</a></li>
+      <li class="pagination"><a href="">3</a></li>
+      <li class="pagination"><a href="">次へ</a></li>
+    </ul>
+  </section>
+  {% include 'footer.html' %}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'application.html' %}
+
+{% block body %}
+  {% include 'header.html' %}
+    {% include 'firstview.html' %}
+  <!-- ニュース詳細 -->
+  <section>
+    <div id="news_details">
+      <div class="news_details">
+        <time>2020.01.01</time>
+        <h4>お知らせタイトル</h4>
+        <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="">
+        <p>
+          ●お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト<br>
+          ●お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト
+        </p>
+      </div>
+
+      <!-- ニュース右ナビゲーション -->
+      <div class="news_nav">
+        <div class="news_details_contents">
+          <a href="../views/newsdetails.html">
+            <div class="news_img news_nav_img">
+              <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+            </div>
+            <div class="news_details_info">
+              <time>2020.01.01</time>
+              <h4>お知らせタイトル</h4>
+              <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+            </div>
+          </a>
+        </div>
+        <div class="news_details_contents">
+          <a href="../views/newsdetails.html">
+            <div class="news_img news_nav_img">
+              <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+            </div>
+            <div class="news_details_info">
+              <time>2020.01.01</time>
+              <h4>お知らせタイトル</h4>
+              <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="more_news">
+      <a href="{{ url_for('views.news') }}">ニュース一覧</a>
+    </div>
+  </section>
+  {% include 'footer.html' %}
+{% endblock %}

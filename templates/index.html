@@ -1,0 +1,166 @@
+{% extends 'application.html' %}
+
+{% block body %}
+  {% include 'header.html' %}
+  <!-- ファーストビュー -->
+  <div>
+    <div id="word">
+      <p>カフェと雑貨と器のお店。</p>
+    </div>
+    <div class="views">
+      <img src="{{ url_for('static', filename='images/skipcafe_img01.jpg') }}" alt="外観の写真">
+    </div>
+  </div>
+
+  <!-- キャッチコピー -->
+  <section id="catchcopy">
+    <h2>"Comfy&nbsp;Hideaway"</h2>
+    <div class="sp">
+      <p>
+        Skipはカフェと雑貨と器のお店。<br>
+        田園の中に建つ、白いお店。<br>
+        一階はカフェ。<br>
+        二階は雑貨店。<br>
+      </p>
+      <p>
+        ちょっと一息。<br>
+        日頃の疲れをSkipで癒しませんか？
+      </p>
+      <p>
+        当店では、幅広い層のお客様に<br>
+        ゆっくりとした時間を過ごして頂けるカフェを<br>
+        理想としています。
+      </p>
+    </div>
+  </section>
+
+  <!-- 動画 -->
+  <section>
+    <div id="movie">
+      <h3>Movie</h3>
+      <p>動画紹介</p>
+      <div class="line"></div>
+    </div>
+    <div class="moviebox"><br>
+      <video src="{{ url_for('static', filename='images/movie.mp4') }}" controls poster="{{ url_for('static', filename='images/skipcafe_img02.jpg') }}" onclick="video_pause()"></video>
+    </div>
+  </section>
+
+  <!-- こだわり -->
+  <section>
+    <div id="about">
+      <h3>About</h3>
+      <p>こだわり</p>
+      <div class="line"></div>
+    </div>
+    <!-- カフェ_pc -->
+    <div class="cafe">
+      <div class="cafe_details">
+        <h2>1F<br>CAFE<br>SPEACE</h2>
+        <h3>カフェのこだわり</h3>
+        <p>心にも体にもやさしい食事で、お客様をお迎えしたいと思っています。忙しい毎日の時間を忘れてゆっくりとした時を過ごして頂ければ嬉しいです。</p>
+      </div>
+      <div class="cafe_img">
+        <img src="{{ url_for('static', filename='images/cafe_img01.jpg') }}" alt="カフェスペース">
+      </div>
+    </div>
+    <!-- カフェ_sp -->
+    <div class="cafe_sp">
+      <div class="cafe_details_sp">
+        <h2>1F&nbsp;CAFE&nbsp;SPEACE</h2>
+        <h3>カフェのこだわり</h3>
+        <p>心にも体にもやさしい食事で、お客様をお迎えしたいと思っています。忙しい毎日の時間を忘れてゆっくりとした時を過ごして頂ければ嬉しいです。</p>
+      </div>
+      <div class="cafe_img_sp">
+        <img src="{{ url_for('static', filename='images/cafe_img01.jpg') }}" alt="カフェスペース">
+      </div>
+    </div>
+    <!-- 雑貨_pc -->
+    <div class="goods">
+      <div class="goods_img">
+        <img src="{{ url_for('static', filename='images/zakka_img01.jpg') }}" alt="雑貨スペース">
+      </div>
+      <div class="goods_details">
+        <h2>2F<br>GENERAL<br>GOODS<br>SPEACE</h2>
+        <h3>雑貨のこだわり</h3>
+        <p>毎日の生活が楽しくなるようなシンプルだけど、ずっと長く使い続けていきたい生活雑貨を集めました。何気ない1日に小さな幸せをプラスするお手伝いが出来れば嬉しいです。</p>
+      </div>
+    </div>
+    <!-- 雑貨_sp -->
+    <div class="goods_sp">
+      <div class="goods_details_sp">
+        <h2>2F&nbsp;GENERAL&nbsp;GOODS&nbsp;SPEACE</h2>
+        <h3>雑貨のこだわり</h3>
+        <p>毎日の生活が楽しくなるようなシンプルだけど、ずっと長く使い続けていきたい生活雑貨を集めました。何気ない1日に小さな幸せをプラスするお手伝いが出来れば嬉しいです。</p>
+      </div>
+      <div class="goods_img_sp">
+        <img src="{{ url_for('static', filename='images/zakka_img01.jpg') }}" alt="雑貨スペース">
+      </div>
+    </div>
+  </section>
+
+  <!-- ニュース -->
+  <section id="news">
+    <div id="top_news">
+      <h3>News</h3>
+      <p>お知らせ</p>
+      <div class="line"></div>
+    </div>
+    <div class="top_news_flex">
+      <div class="top_news_contents">
+        <a href="../views/newsdetails.html">
+          <div class="top_news_img">
+            <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+          </div>
+          <div class="top_news_info">
+            <time>2020.01.01</time>
+            <h4>お知らせタイトル</h4>
+            <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+          </div>
+        </a>
+      </div>
+      <!-- 複製 -->
+      <div class="top_news_contents">
+        <a href="../views/newsdetails.html">
+          <div class="top_news_img">
+            <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+          </div>
+          <div class="top_news_info">
+            <time>2020.01.01</time>
+            <h4>お知らせタイトル</h4>
+            <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+          </div>
+        </a>
+      </div>
+      <div class="top_news_contents">
+        <a href="../views/newsdetails.html">
+          <div class="top_news_img">
+            <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+          </div>
+          <div class="top_news_info">
+            <time>2020.01.01</time>
+            <h4>お知らせタイトル</h4>
+            <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+          </div>
+        </a>
+      </div>
+      <div class="top_news_contents">
+        <a href="../views/newsdetails.html">
+          <div class="top_news_img">
+            <img src="{{ url_for('static', filename='images/news_img01.png') }}" alt="休業のお知らせ">
+          </div>
+          <div class="top_news_info">
+            <time>2020.01.01</time>
+            <h4>お知らせタイトル</h4>
+            <p>お知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキストお知らせテキスト</p>
+          </div>
+        </a>
+      </div>
+      <!-- 複製 -->
+    </div>
+    <div class="more_news">
+      <a href="{{ url_for('views.news') }}">ニュース一覧</a>
+    </div>
+  </section>
+  {% include 'footer.html' %}
+{% endblock %}
