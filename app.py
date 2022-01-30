@@ -1,6 +1,7 @@
 from flask import Flask
 from views import skipcafe_view
-from database import init_db
+from database import db
+import models
 import config
 
 def create_app():
@@ -8,12 +9,15 @@ def create_app():
 
     # DB設定の読み込み
     app.config.from_object('config.Config')
-    init_db(app)
+    db.init_app(app)
 
     app.register_blueprint(skipcafe_view.app)
     return app
 
 app = create_app()
+
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__":
     app.run(debug=True)
