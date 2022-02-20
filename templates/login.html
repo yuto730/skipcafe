@@ -1,0 +1,24 @@
+{% extends 'application.html' %}
+
+{% block body %}
+<section id="admin_login">
+  <div class="admin_box">
+    <div class="admin_login">
+      <h2>スキップカフェ管理画面</h2>
+      <form method="POST" action="/login">
+        <div class="user_login_field">
+          <label>ユーザー名</label>
+          <input type="text" name="user_name" required>
+        </div>
+        <div class="user_login_field">
+          <label>パスワード</label>
+          <input type="password" name="password" required>
+        </div>
+        <div class="user_login_action">
+          <input type="submit" value="ログイン" class="action_login">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

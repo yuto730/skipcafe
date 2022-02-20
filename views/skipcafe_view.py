@@ -1,10 +1,12 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from database import db
-from models import Contact
+from werkzeug.security import generate_password_hash, check_password_hash
+from database import db, login_manager, login_user
+from models import Contact, User
 
 # Blueprintのオブジェクトを生成する
 app = Blueprint('views', __name__)
 
+# Web画面
 @app.route('/')
 def index():
     title = "Skipcafe"
@@ -33,12 +35,6 @@ def access():
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    if request.method == 'GET':
-        title = "Skipcafe|Contact"
-        subtitle = 'Contact'
-        caption = 'お問い合わせ'
-        return render_template('contact.html', title=title, subtitle=subtitle, caption=caption)
-
     if request.method == 'POST':
         form_name = request.form.get('name') # str
         form_url = request.form.get('url') # str
@@ -56,3 +52,62 @@ def contact():
         db.session.add(contact)
         db.session.commit()
         return redirect(url_for('views.index'))
+    else:
+        title = "Skipcafe|Contact"
+        subtitle = 'Contact'
+        caption = 'お問い合わせ'
+        return render_template('contact.html', title=title, subtitle=subtitle, caption=caption)
+
+
+# 管理画面
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        form_user_name = request.form.get('user_name')
+        form_email = request.form.get('email')
+        form_password = request.form.get('password')
+        form_password_confirmation = request.form.get('password_confirmation')
+        form_first_name = request.form.get('first_name')
+        form_last_name = request.form.get('last_name')
+
+        user = User(
+            user_name=form_user_name,
+            email=form_email,
+            password=generate_password_hash(form_password, method='sha256'),
+            password_confirmation=generate_password_hash(form_password_confirmation, method='sha256'),
+            first_name=form_first_name,
+            last_name=form_last_name
+        )
+        db.session.add(user)
+        db.session.commit()
+        return redirect(url_for('views.login'))
+    else:
+        title = "Skipcafe|SignUp"
+        return render_template('signup.html', title=title)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        form_user_name = request.form.get('user_name')
+        form_password = request.form.get('password')
+        print(form_user_name)
+        print(form_password)
+
+        user = User.query.filter_by(user_name=form_user_name).first()
+        if check_password_hash(user.password, form_password):
+            login_user(user)
+            return redirect('admin')
+    else:
+        title = "Skipcafe|Login"
+        return render_template('login.html', title=title)
+
+@app.route('/admin')
+# @login_required
+def admin():
+    title = "Skipcafe管理画面"
+    # app_logger.logger.info("TOPページ")
+    return render_template('admin.html', title=title)
