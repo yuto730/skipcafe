@@ -1,0 +1,48 @@
+{% extends 'application.html' %}
+
+{% block body %}
+<section id="admin_signup">
+  <div class="admin_signup_box">
+    <div class="user_new">
+      <h2>ユーザー新規登録</h2>
+      <form id="signup-form" method="POST" action="/signup">
+      <!-- <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> -->
+        <div class="user_new_field">
+          <label>ユーザー名<span>必須</span></label>
+          <input type="text" name="user_name" placeholder="お名前" required>
+        </div>
+
+        <div class="user_new_field">
+          <label>メールアドレス<span>必須</span></label>
+          <input type="text" name="email" placeholder="例) example@example.com" required>
+        </div>
+
+        <div class="user_new_field">
+          <label>パスワード<span>必須</span></label>
+          <input type="password" id="password01" name="password" placeholder: "6文字以上" required>
+        </div>
+
+        <div class="user_new_field">
+          <label>確認用パスワード<span>必須</span></label>
+          <input type="password" id="password02" name="password_confirmation" required>
+        </div>
+
+        <div class="user_new_field">
+          <label>名字<span>必須</span></label>
+          <input type="text" name="first_name" required>
+        </div>
+
+        <div class="user_new_field">
+          <label>名前<span>必須</span></label>
+          <input type="text" name="last_name" required>
+        </div>
+
+        <div class="user_new_actions">
+          <button class="admin_signin"><a href="{{ url_for('views.login') }}">ログインはこちら</a></button>
+          <button class="admin_new_submit" type="submit" onClick="return CheckPassword()">新規登録</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

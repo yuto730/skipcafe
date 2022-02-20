@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+/* サインアップ */
+#admin_signup{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../static//images/skipcafe_img02.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+}
+.admin_signup_box{
+  padding-top: 5%;
+}
+.user_new{
+  width: 920px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.user_new h2{
+  text-align: center;
+  font-size: 22px;
+  border-bottom: 1px solid #E7E7E7;
+  padding-bottom: 20px;
+}
+.user_new form{
+  margin-top: 0;
+}
+.user_new_field{
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.user_new_field span{
+  background-color: #666666;
+  padding: 4px 8px;
+  margin-left: 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  color: #fff;
+}
+.user_new_field input{
+  width: 100%;
+  margin-top: 8px;
+}
+.user_new_actions{
+  width: 380px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding-top: 25px;
+}
+.admin_signin{
+  width: 180px;
+  height: 42px;
+  color: #fff;
+  background-color: #707070;
+}
+.admin_new_submit{
+  width: 180px;
+  height: 42px;
+  text-align: center;
+  color: #fff;
+  background-color: #707070;
+}
+.admin_new_submit:hover,.admin_signin:hover{
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+/* ログイン */
+#admin_login{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../static/images/skipcafe_img02.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+}
+.admin_box{
+  padding-top: 140px;
+}
+.admin_login{
+  width: 920px;
+  margin: 0 auto;
+  padding: 80px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.admin_login h2{
+  text-align: center;
+  font-size: 22px;
+  border-bottom: 1px solid #707070;
+  padding-bottom: 20px;
+}
+.admin_login form{
+  margin-top: 0;
+}
+.user_login_field{
+  padding-top: 30px;
+}
+.user_login_field input{
+  width: 100%;
+  margin-top: 15px;
+  padding: 6px;
+  border: 1px solid #E7E7E7;
+  border-radius: 5px;
+}
+.user_login_action{
+  text-align: center;
+  padding-top: 60px;
+}
+.action_login{
+  width: 200px;
+  height: 49px;
+  text-align: center;
+  color: #fff;
+  background-color: #A7A7A7;
+  border: none;
+}
+.action_login:hover{
+  opacity: 0.7;
+  transition: 0.2s;
+}
