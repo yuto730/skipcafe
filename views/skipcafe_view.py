@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
-from database import db, login_manager, login_user
+from database import db, login_manager, login_user, logout_user, login_required
 from models import Contact, User
 
 # Blueprintのオブジェクトを生成する
@@ -94,8 +94,6 @@ def login():
     if request.method == 'POST':
         form_user_name = request.form.get('user_name')
         form_password = request.form.get('password')
-        print(form_user_name)
-        print(form_password)
 
         user = User.query.filter_by(user_name=form_user_name).first()
         if check_password_hash(user.password, form_password):
@@ -104,6 +102,12 @@ def login():
     else:
         title = "Skipcafe|Login"
         return render_template('login.html', title=title)
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for('views.login'))
 
 @app.route('/admin')
 # @login_required

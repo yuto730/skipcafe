@@ -1,0 +1,17 @@
+<footer id="admin_footer">
+  <p>&copy;&nbsp;2022&nbsp;Skipcafe</p>
+</footer>
+
+<script>
+  $("#user_list").hide();
+  $("#user_btn").click(function () {
+    $("#user_list").slideToggle('normal');
+    $(this).toggleClass("active");
+  });
+
+  $("#news_list").hide();
+  $("#news_btn").click(function () {
+    $("#news_list").slideToggle('normal');
+    $(this).toggleClass("active");
+  });
+</script>
