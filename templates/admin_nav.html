@@ -1,0 +1,52 @@
+<nav id="admin_nav">
+  <h1>
+    <a href="{{ url_for('views.index') }}">
+      <img src="{{ url_for('static', filename='images/logo.png') }}">
+    </a>
+  </h1>
+
+  <dev class="admin_nav">
+    <button class="admin_nav_home">
+      <a href="{{ url_for('views.admin') }}">
+        <i class="fas fa-solid fa-desktop"></i>
+        <span class="nav_text">Home</span>
+      </a>
+    </button>
+
+    <ul class="accordion">
+      <li class="accordion_title" id="user_btn">
+        <i class="fas fa-solid fa-user"></i>
+        <span class="nav_text">ユーザ管理</span>
+      </li>
+      <ul class="accordion_list" id="user_list">
+        <li class="accordion_item">
+          <a href="admin.html">
+            <p>ユーザ情報の編集</p>
+          </a>
+        </li>
+        <li class="accordion_item">
+          <a href="admin.html">
+            <p>ユーザ一覧</p>
+          </a>
+        </li>
+      </ul>
+
+      <li class="accordion_title" id="news_btn">
+        <i class="fas fa-solid fa-file"></i>
+        <span class="nav_text">お知らせ管理</span>
+      </li>
+      <ul class="accordion_list" id="news_list">
+        <li class="accordion_item">
+          <a href="admin.html">
+            <p>お知らせ投稿</p>
+          </a>
+        </li>
+        <li class="accordion_item">
+          <a href="admin.html">
+            <p>お知らせ一覧</p>
+          </a>
+        </li>
+      </ul>
+    </ul>
+  </dev>
+</nav>

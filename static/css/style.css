@@ -238,11 +238,11 @@
 }
 
 /* フッター */
-footer{
+#footer{
   text-align: center;
   margin-top: 80px;
 }
-footer img{
+#footer img{
   width: 80px;
 }
 #copyright{
@@ -670,7 +670,7 @@ textarea{
   }
 
   /* フッター */
-  footer{
+  #footer{
     margin-top: 60px;
   }
   #copyright{
@@ -1119,10 +1119,10 @@ textarea{
   }
 
   /* フッター */
-  footer{
+  #footer{
     margin-top: 40px;
   }
-  footer img{
+  #footer img{
     width: 15vw;
   }
   #copyright{
