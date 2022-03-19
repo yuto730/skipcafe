@@ -98,7 +98,7 @@ def login():
         user = User.query.filter_by(user_name=form_user_name).first()
         if check_password_hash(user.password, form_password):
             login_user(user)
-            return redirect('admin')
+            return redirect('/admin')
     else:
         title = "Skipcafe|Login"
         return render_template('login.html', title=title)
@@ -107,11 +107,27 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for('views.login'))
+    return redirect('login')
 
 @app.route('/admin')
-# @login_required
 def admin():
     title = "Skipcafe管理画面"
     # app_logger.logger.info("TOPページ")
     return render_template('admin.html', title=title)
+
+@app.route('/users/<int:id>/edit/', methods=['GET', 'POST'])
+@login_required
+def user_edit(user):
+    user = User.query.get(user)
+    if request.method == "GET":
+        return render_template('admin_user_edit.html', user=user)
+    else:
+        # 上でインスタンス化したuserのプロパティを更新する
+        user.user_name = request.form.get('user_name')
+        user.email = request.form.get('email')
+        user.password = request.form.get('password')
+        user.first_name = request.form.get('first_name')
+        user.last_name = request.form.get('last_name')
+        # 更新する場合は、add()は不要でcommit()だけでよい
+        db.session.commit()
+        return redirect('/admin')

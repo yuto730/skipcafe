@@ -1,0 +1,60 @@
+{% extends 'application.html' %}
+
+{% block body %}
+<section class="admin">
+  {% include 'admin_nav.html' %}
+  <div class="right_content">
+    {% include 'admin_header.html' %}
+
+    <div class="admin_contents">
+      <div class="admin_title">
+        <h2>ユーザー情報編集</h2>
+          <form method="POST">
+          <div class="user_edit">
+
+            <div class="user_edit_field left_field">
+              <label>ユーザー名</label>
+              <input type="text" name="user_name" value={{ user.user_name }}>
+            </div>
+
+            <div class="user_edit_field right_field">
+              <label>メールアドレス</label>
+              <input type="email" name="email" value={{ user.email }}>
+            </div>
+
+            <div class="user_edit_field left_field">
+              <label>新しいパスワード</label>
+              <input type="password" id="new_password01" placeholder="変更したくない場合は空白のままにします">
+            </div>
+
+            <div class="user_edit_field right_field">
+              <label>新しいパスワード（確認用）</label>
+              <input type="password" id="new_password02" name="password">
+            </div>
+
+            <div class="user_edit_field left_field">
+              <label>名字</label>
+              <input type="text" name="first_name" value={{ user.first_name }}>
+            </div>
+
+            <div class="user_edit_field right_field">
+              <label>名前</label>
+              <input type="text" name="last_name" value={{ user.last_name }}>
+            </div>
+
+            <div class="user_edit_field left_field">
+              <label>現在のパスワード</label>
+              <input type="password" name="password" placeholder="変更を確認するには、現在のパスワードが必要です">
+            </div>
+
+          </div>
+          <div class="user_edit_actions">
+            <input type="submit" alue="変更">
+          </div>
+        </form>
+      </div>
+
+    {% include 'admin_footer.html' %}
+  </div>
+</section>
+{% endblock %}
