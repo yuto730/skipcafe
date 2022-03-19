@@ -173,7 +173,7 @@
   position: relative;
   left: 80px;
   transform: rotate(0deg);
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .accordion{
   width: 100%;
@@ -186,6 +186,9 @@
   background-color: #D7D7D7;
   transition: 0.4s;
 }
+/* .news_btn_active{
+  background-color: #D7D7D7;
+} */
 .pull-right-container{
   position: absolute;
   right: 10px;
@@ -201,7 +204,7 @@
 }
 .accordion_title.active::after{
   transform: rotate(-90deg);
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .accordion_item:hover{
   background-color: #D7D7D7;
@@ -212,26 +215,11 @@
   padding: 10px 0 10px 10px;
 }
 
-
-
-
 /* 右コンテンツ */
 .right_content{
   width: 86vw;
   margin: 0 0 0 auto;
 }
-
-/* ヘッダー */
-#admin_header{
-  background-color: #D7D7D7;
-}
-#admin_header p{
-  cursor: pointer;
-  padding: 18px 12px 18px 0;
-  text-align: right;
-}
-
-/* コンテンツ */
 #content{
   height: 87vh;
   background-image: url(../../static/images/skipcafe_img02.jpg);
@@ -286,6 +274,38 @@
   color: #333 !important;
 }
 
+/* ヘッダー */
+#admin_header{
+  background-color: #D7D7D7;
+}
+#admin_header p{
+  cursor: pointer;
+  padding: 18px 12px 18px 0;
+  text-align: right;
+}
+
+/* コンテンツ */
+.admin_contents{
+  width: 80vw;
+  min-height: 80vh;
+  margin: 0 auto;
+}
+.admin_title{
+  width: 80vw;
+  margin: 40px auto 0;
+  background-color: #fff;
+  border-top: 4px solid #E7E7E7;
+}
+.admin_title h2{
+  padding: 30px 0 15px 20px;
+  font-size: 20px;
+  border-bottom: 1px solid #E7E7E7;
+}
+.admin_ga{
+  width: 100%;
+  margin-top: 30px;
+}
+
 /* フッター */
 #admin_footer{
   padding: 18px 12px;
@@ -294,4 +314,49 @@
 }
 #admin_footer p{
   font-size: 12px;
+}
+
+/* ユーザー情報編集 */
+.user_edit{
+  width: 78vw;
+  margin: 50px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.user_edit_field{
+  padding-bottom: 30px;
+  text-align: end;
+}
+.user_edit_field label{
+  margin-right: 10px;
+  font-size: 14px;
+  text-align: right;
+}
+.user_edit_field input{
+  width: 350px;
+  text-align: start;
+  border: 1px solid #E7E7E7;
+}
+.left_field{
+  width: 500px;
+}
+.right_field{
+  width: 560px;
+}
+.user_edit_actions{
+  text-align: center;
+  padding: 30px 0 40px;
+}
+.user_edit_actions input{
+  width: 200px;
+  height: 49px;
+  text-align: center;
+  color: #fff;
+  background-color: #A7A7A7;
+  border: none;
+}
+.user_edit_actions input:hover{
+  opacity: 0.7;
+  transition: 0.2s;
 }
