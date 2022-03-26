@@ -360,3 +360,38 @@
   opacity: 0.7;
   transition: 0.2s;
 }
+
+/* ユーザー,お知らせ一覧 */
+#admin_table{
+  width: 96%;
+  margin: 40px auto 0;
+  border: 1px solid #E7E7E7;
+}
+.admin_table th{
+  padding: 15px 0px;
+  text-align: center;
+  background-color: #F7F7F7;
+  border-right: 1px solid #E7E7E7;
+}
+.admin_table th:last-child{
+  border-right: none;
+}
+.admin_table td{
+  padding: 15px 0;
+  text-align: center;
+  border-right: 1px solid #E7E7E7;
+  border-bottom: 1px solid #E7E7E7;
+}
+.admin_table td:last-child{
+  border-right: none;
+}
+.table_logo{
+  width: 24px;
+}
+#admin_pagination{
+  text-align: center;
+  padding: 60px 0 40px;
+}
+.admin_edit_link{
+  width: 18px;
+}
