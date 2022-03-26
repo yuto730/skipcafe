@@ -20,12 +20,12 @@
       </li>
       <ul class="accordion_list" id="user_list">
         <li class="accordion_item">
-          <a href="/users/{{ current_user.id }}/edit/">
+          <a href="/user/{{ current_user.id }}/edit/">
             <p>ユーザ情報の編集</p>
           </a>
         </li>
         <li class="accordion_item">
-          <a href="admin.html">
+          <a href="{{ url_for('views.user_list') }}">
             <p>ユーザ一覧</p>
           </a>
         </li>

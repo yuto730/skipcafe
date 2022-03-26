@@ -115,12 +115,13 @@ def admin():
     # app_logger.logger.info("TOPページ")
     return render_template('admin.html', title=title)
 
-@app.route('/users/<int:id>/edit/', methods=['GET', 'POST'])
+@app.route('/user/<int:id>/edit/', methods=['GET', 'POST'])
 @login_required
 def user_edit(user):
     user = User.query.get(user)
     if request.method == "GET":
-        return render_template('admin_user_edit.html', user=user)
+        title = "Skipcafe管理画面|ユーザ編集"
+        return render_template('admin_user_edit.html', user=user, title=title)
     else:
         # 上でインスタンス化したuserのプロパティを更新する
         user.user_name = request.form.get('user_name')
@@ -131,3 +132,11 @@ def user_edit(user):
         # 更新する場合は、add()は不要でcommit()だけでよい
         db.session.commit()
         return redirect('/admin')
+
+@app.route('/user_list', methods=['GET'])
+def user_list():
+    if request.method == 'GET':
+        # DBに登録されたデータをすべて取得する
+        title = "Skipcafe管理画面|ユーザ一覧"
+        users = User.query.all()
+        return render_template('admin_user_list.html', title=title, users=users)
