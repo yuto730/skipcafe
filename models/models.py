@@ -18,3 +18,10 @@ class User(UserMixin, db.Model):
     password_confirmation = db.Column(db.String(300), nullable=True)
     first_name            = db.Column(db.String(30), nullable=True)
     last_name             = db.Column(db.String(30), nullable=True)
+
+class News(db.Model):
+    __tablename__ = 'news'
+    id       = db.Column(db.Integer, primary_key=True)
+    title    = db.Column(db.String(60), nullable=True, unique=True)
+    start_on = db.Column(db.DateTime, nullable=True)
+    content  = db.Column(db.Text, nullable=True)

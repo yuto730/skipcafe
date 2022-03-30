@@ -1,0 +1,41 @@
+{% extends 'application.html' %}
+
+{% block body %}
+<section class="admin">
+  {% include 'admin_nav.html' %}
+  <div class="right_content">
+    {% include 'admin_header.html' %}
+
+    <div class="admin_contents">
+      <div class="admin_title">
+        <h2>お知らせ投稿</h2>
+        <form id="admin_news_form" method="POST" action="/news_create">
+          <div class="admin_news_form">
+            <label>タイトル<span class="mandatory">必須</span></label><br>
+            <input type="text" name="title" placeholder: "最大入力20文字">
+          </div>
+
+          <div class="admin_news_form news_edit_form admin_news_date">
+            <label>掲載開始日<span class="mandatory">必須</span></label><br>
+            <input type="datetime-local" name="start_on">
+          </div>
+
+          <div class="admin_news_form">
+            <label>サムネイル画像<span class="mandatory">必須</span></label><br>
+            <input type="file" name="image" id="news_image">
+          </div>
+          <div class="admin_news_form">
+            <label>お知らせ詳細<span class="mandatory">必須</span></label><br>
+            <textarea name="content" cols="33"></textarea>
+          </div>
+          <div class="admin_news_submit">
+            <input type="submit" value="投稿">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    {% include 'admin_footer.html' %}
+  </div>
+</section>
+{% endblock %}

@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 from database import db, login_manager, login_user, logout_user, login_required
-from models import Contact, User
+from models import Contact, User, News
 
 # Blueprintのオブジェクトを生成する
 app = Blueprint('views', __name__)
@@ -140,3 +140,17 @@ def user_list():
         title = "Skipcafe管理画面|ユーザ一覧"
         users = User.query.all()
         return render_template('admin_user_list.html', title=title, users=users)
+
+@app.route('/news_create', methods=['GET', 'POST'])
+def news_create():
+    if request.method == 'POST':
+        title = request.form.get('title')
+        start_on = request.form.get('start_on')
+        content = request.form.get('content')
+        news = News(title=title, start_on=start_on, content=content)
+        db.session.add(news)
+        db.session.commit()
+        return redirect('/admin')
+    else:
+        title = "Skipcafe管理画面|お知らせ投稿"
+        return render_template('admin_news_create.html', title=title)
