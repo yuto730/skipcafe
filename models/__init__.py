@@ -1,5 +1,5 @@
-from .models import Contact, User
+from .models import Contact, User, News
 
 __all__ = [
-    Contact,User,
+    Contact,User,News
 ]

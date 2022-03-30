@@ -361,6 +361,53 @@
   transition: 0.2s;
 }
 
+/* お知らせ投稿 */
+#admin_news_form{
+  width: 77vw;
+  margin: 30px auto;
+}
+.admin_news_form{
+  margin-bottom: 40px;
+}
+.admin_news_form label{
+  font-size: 17px;
+}
+.mandatory{
+  background-color: #666666;
+  padding: 6px 12px;
+  margin-left: 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #fff;
+}
+.admin_news_date input{
+  width: 320px !important;
+}
+.admin_news_form input,.admin_news_form textarea{
+  margin-top: 15px;
+  width: 820px;
+  border: 1px solid #E7E7E7;
+}
+#news_image{
+  padding: 60px 300px;
+  background-color: #F7F7F7;
+}
+.admin_news_submit{
+  padding-bottom: 40px;
+}
+.admin_news_submit input{
+  width: 200px;
+  height: 49px;
+  text-align: center;
+  color: #fff;
+  background-color: #A7A7A7;
+  border: none;
+}
+.admin_news_submit input:hover{
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
 /* ユーザー,お知らせ一覧 */
 #admin_table{
   width: 96%;
